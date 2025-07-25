@@ -121,8 +121,3 @@ Ashutosh Bhavsar
 
 ---
 
-### 👉 Next Steps:
-
-- Want me to **generate a `LICENSE` (MIT)** file too?
-- Want me to push the `README.md` and license to GitHub now?
-
