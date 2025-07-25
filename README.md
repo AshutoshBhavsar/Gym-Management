@@ -126,4 +126,3 @@ Ashutosh Bhavsar
 - Want me to **generate a `LICENSE` (MIT)** file too?
 - Want me to push the `README.md` and license to GitHub now?
 
-Let me know and I’ll prepare the file or push them automatically.
