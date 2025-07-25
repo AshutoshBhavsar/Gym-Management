@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;  // For managing table data
 import java.time.LocalDate;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 
 class GymPay implements ActionListener {
 JLabel l1_Date, l2_ID, l3_package, l4_amount, l5_Mode, l6,l7_Rid,l8_mname,l9_pname,l10_ptype,image1,l11_Sid, l12_trainerId, l13_trainerName, l14_basicPay, l15_days, l16_hours, l17_totalSalary;;
@@ -31,7 +32,7 @@ int screenWidth = (int) screenSize.getWidth();
 		 frm.setExtendedState(JFrame.MAXIMIZED_BOTH); // Make fullscreen
 		  conn = DBConnect.setConnection();
 
-				   ImageIcon i1 = new ImageIcon("RBanner.png");
+				   ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/RBanner.png")));
 						  	        Image img1 = i1.getImage();
 						  	       Image resizedImg1 = img1.getScaledInstance(screenWidth , 280,Image.SCALE_SMOOTH );
 						  	        ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);
@@ -220,29 +221,40 @@ btn4_reciept.setBounds(480, 650, 100, 30);
      cb3_trainerId.setBounds(950, 350, 150, 30);
      Panel1.add(cb3_trainerId);
      DBConnect.fillCombo(cb3_trainerId, "Trainer", "Trainer_id");
-     cb3_trainerId.addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-             String selectedTrainerId = (String) cb3_trainerId.getSelectedItem();
-             if (selectedTrainerId != null && !selectedTrainerId.isEmpty()) {
-                 displayTrainerName(selectedTrainerId);
-                 displayBasicpay(selectedTrainerId);
-                 displayDays(selectedTrainerId);
-                 displayHours(selectedTrainerId);
-                 calculateTotalSalary();
-             }
-         }
-     });
+        cb3_trainerId.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String selectedTrainerId = (String) cb3_trainerId.getSelectedItem();
+            if (selectedTrainerId != null && !selectedTrainerId.isEmpty()) {
+                // Only auto-fill if the text fields are empty
+                if (t9_trainerName.getText().isEmpty()) {
+                    displayTrainerName(selectedTrainerId);
+                }
+                if (t11_basicPay.getText().isEmpty()) {
+                    displayBasicpay(selectedTrainerId);
+                }
+                if (t12_days.getText().isEmpty()) {
+                    displayDays(selectedTrainerId);
+                }
+                if (t13_hours.getText().isEmpty()) {
+                    displayHours(selectedTrainerId);
+                }
 
-     // Trainer Name
+                // Do not calculate salary automatically — let user edit freely
+                // Provide a button to trigger: calculateTotalSalary();
+            }
+        }
+    });
+
+    // Trainer Name
      l13_trainerName = new JLabel("Trainer Name:");
      l13_trainerName.setBounds(800, 400, 100, 30);
      Panel1.add(l13_trainerName);
 
-     t9_trainerName = new JTextField();
-     t9_trainerName.setBounds(950, 400, 150, 30);
-     t9_trainerName.setEditable(false);
-     Panel1.add(t9_trainerName);
+    t9_trainerName = new JTextField();
+    t9_trainerName.setBounds(950, 400, 150, 30);
+    t9_trainerName.setEditable(false); // <- This disables editing
+    Panel1.add(t9_trainerName);
 
      // Basic Pay
      l14_basicPay = new JLabel("Basic Pay:");
@@ -276,10 +288,10 @@ btn4_reciept.setBounds(480, 650, 100, 30);
      l17_totalSalary.setBounds(800, 600, 100, 30);
      Panel1.add(l17_totalSalary);
 
-     t14_totalSalary = new JTextField();
-     t14_totalSalary.setBounds(950, 600, 150, 30);
-     t14_totalSalary.setEditable(false);
-      Panel1.add(t14_totalSalary);
+    t14_totalSalary = new JTextField();
+    t14_totalSalary.setBounds(950, 600, 150, 30);
+    t14_totalSalary.setEditable(false); // <- This disables editing
+    Panel1.add(t14_totalSalary);
 
   btn5_submit2 = new JButton("Submit");
 	 btn5_submit2.setBounds(800, 650, 100, 30);

@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Trainer extends JFrame implements ActionListener {
     JPanel inputPanel, buttonPanel, searchPanel, mainPanel, tablePanel;
@@ -31,7 +32,7 @@ public class Trainer extends JFrame implements ActionListener {
 
         conn = DBConnect.setConnection();
 
-        ImageIcon i1 = new ImageIcon("TBanner.png");
+        ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/TBanner.png")));
         Image img1 = i1.getImage();
         Image resizedImg1 = img1.getScaledInstance(screenWidth - 20, 250, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+import java.util.Objects;
 
 public class GymReg implements ActionListener {
     JButton btn_search, btn_reset, btn_add, btn_update, btn_delete, btn_Back;
@@ -34,7 +35,7 @@ public class GymReg implements ActionListener {
         // Panel jp1 for the banner
 
 
-        ImageIcon i1 = new ImageIcon("MBanner.png");
+        ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/MBanner.png")));
         Image img1 = i1.getImage();
         Image resizedImg1 = img1.getScaledInstance(frameWidth, 250, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);

@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
+import java.util.Objects;
 import javax.swing.JOptionPane;
 
 class GymAdmin extends JFrame implements ActionListener {
@@ -21,7 +22,7 @@ class GymAdmin extends JFrame implements ActionListener {
         int frameHeight = (int) screenSize.getHeight();
 
 
-        ImageIcon i1 = new ImageIcon("Banner3.png");
+        ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Banner3.png")));
         Image img1 = i1.getImage();
         Image resizedImg1 = img1.getScaledInstance(frameWidth, 250, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);

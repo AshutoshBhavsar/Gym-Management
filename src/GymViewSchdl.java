@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
+import java.util.Objects;
 import javax.swing.table.DefaultTableModel;
 
 public class GymViewSchdl implements ActionListener {
@@ -27,7 +28,7 @@ public class GymViewSchdl implements ActionListener {
         frm.setLayout(null);
 
         // Banner image setup
-        ImageIcon i1 = new ImageIcon("vsBanner.png");
+        ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/vsBanner.png")));
         Image img1 = i1.getImage();
         Image resizedImg1 = img1.getScaledInstance(screenWidth, 250, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);

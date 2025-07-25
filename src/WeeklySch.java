@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
+import java.util.Objects;
 import javax.swing.table.DefaultTableModel;
 
 public class WeeklySch extends JFrame implements ActionListener {
@@ -27,7 +28,7 @@ public class WeeklySch extends JFrame implements ActionListener {
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
 
-        ImageIcon i1 = new ImageIcon("WBanner.png");
+        ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/WBanner.png")));
         Image img1 = i1.getImage().getScaledInstance(screenWidth, 250, Image.SCALE_SMOOTH);
         image1 = new JLabel(new ImageIcon(img1));
         image1.setBounds(0, 0, screenWidth, 250);

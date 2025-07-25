@@ -2,6 +2,7 @@ import java.sql.*;  // For database connection and SQL classes
 import javax.swing.*;  // For GUI components
 import java.awt.*;  // For layout managers
 import java.awt.event.*;  // For event handling
+import java.util.Objects;
 import javax.swing.table.DefaultTableModel;  // For managing table data
 
 class Packagecurd implements ActionListener {
@@ -31,7 +32,7 @@ class Packagecurd implements ActionListener {
 
 
           // Adding image
-          ImageIcon i1 = new ImageIcon("PBanner.png");
+          ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/PBanner.png")));
           Image img1 = i1.getImage();
           Image resizedImg1 = img1.getScaledInstance(screenWidth, 250, Image.SCALE_SMOOTH);
           ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);

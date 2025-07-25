@@ -4,6 +4,7 @@ import java.awt.*;  // For layout managers
 import java.awt.event.*;  // For event handling
 import javax.swing.table.DefaultTableModel;  // For managing table data
 import java.time.LocalDate;
+import java.util.Objects;
 
 class Attendance implements ActionListener
 {
@@ -35,7 +36,7 @@ class Attendance implements ActionListener
 
 
 
-        	ImageIcon i1 = new ImageIcon("Abanner.png");
+        	ImageIcon i1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Abanner.png")));
 			Image img1 = i1.getImage();
 	       	Image resizedImg1 = img1.getScaledInstance(screenWidth , 250,Image.SCALE_SMOOTH );
 	        ImageIcon resizedIcon1 = new ImageIcon(resizedImg1);
@@ -281,7 +282,7 @@ class Attendance implements ActionListener
 	            String date = Txt_t1.getText().trim();
 
 	            if (DBConnect.isValidName(mname)) {
-	                PreparedStatement pst = conn.prepareStatement("INSERT INTO M_Attendance (mem_id, mem_name, date1, hours) VALUES (?, ?, ?, ?)");
+	                PreparedStatement pst = conn.prepareStatement("INSERT INTO M_Attendance (mem_id, mem_name, date, hours) VALUES (?, ?, ?, ?)");
 	                pst.setString(1, mid);
 	                pst.setString(2, mname);
 	                pst.setString(3, date);
@@ -305,7 +306,7 @@ class Attendance implements ActionListener
 			            String date = Txt_t2.getText().trim();
 
 			            if (DBConnect.isValidName(tname)) {
-			                PreparedStatement pst = conn.prepareStatement("INSERT INTO T_Attendance (Trainer_id, Tname, date2, hours2) VALUES (?, ?, ?, ?)");
+			                PreparedStatement pst = conn.prepareStatement("INSERT INTO T_Attendance (Trainer_id, Tname, date, hours) VALUES (?, ?, ?, ?)");
 			                pst.setString(1, tid);
 			                pst.setString(2, tname);
 			                pst.setString(3, date);
@@ -345,14 +346,14 @@ class Attendance implements ActionListener
  private void displayAllRecords() {
         try {
             conn = DBConnect.setConnection();
-            String query = "SELECT mem_id, mem_name, date1, hours FROM M_Attendance";
+            String query = "SELECT mem_id, mem_name, date, hours FROM M_Attendance";
             Statement statement = conn.createStatement();
             ResultSet results = statement.executeQuery(query);
 
             while (results.next()) {
                 String mid = results.getString("mem_id");
                 String mname = results.getString("mem_name");
-                String date = results.getString("date1");
+                String date = results.getString("date");
                 int hours = results.getInt("hours");
 
 
@@ -368,14 +369,14 @@ class Attendance implements ActionListener
 private void displayAllRecords1() {
         try {
             conn = DBConnect.setConnection();
-            String query = "SELECT Trainer_id, Tname, date2, hours FROM T_Attendance";
+            String query = "SELECT Trainer_id, Tname, date, hours FROM T_Attendance";
             Statement statement = conn.createStatement();
             ResultSet results = statement.executeQuery(query);
 
             while (results.next()) {
                 String tid = results.getString("Trainer_id");
                 String tname = results.getString("Tname");
-                String date = results.getString("date2");
+                String date = results.getString("date");
                 int hours = results.getInt("hours");
 
 
