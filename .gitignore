@@ -1,0 +1,13 @@
+# IntelliJ and Java build files
+*.class
+.idea/
+*.iml
+out/
+
+# Logs, backups
+*.log
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
