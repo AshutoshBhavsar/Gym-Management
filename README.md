@@ -102,7 +102,7 @@ Right-click GymAdmin.java → Run
 
 
 📸 Screenshots
-<img width="1920" height="1080" alt="Screenshot 2025-07-26 000738" src="https://github.com/user-attachments/assets/fd02f000-5fc7-4de3-a478-2bd48e907b53" />
+<img width="1920" height="1080" alt="Screenshot 2025-07-26 190634" src="https://github.com/user-attachments/assets/0f78dcdd-e432-41c6-a11b-efcd6972d173" />
 <img width="1920" height="1080" alt="Screenshot 2025-07-26 000745" src="https://github.com/user-attachments/assets/92ec7e25-1d36-4ec9-aa7e-e2de079d58d9" />
 <img width="1920" height="1080" alt="Screenshot 2025-07-26 000751" src="https://github.com/user-attachments/assets/59b5ea18-37c5-4512-9b8f-906bc4d10a30" />
 <img width="1920" height="1080" alt="Screenshot 2025-07-26 000759" src="https://github.com/user-attachments/assets/d6730e4a-0b85-419c-af19-8fdc1bafed9e" />
