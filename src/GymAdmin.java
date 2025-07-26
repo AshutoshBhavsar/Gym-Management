@@ -36,7 +36,7 @@ class GymAdmin extends JFrame implements ActionListener {
         jp.add(Lb1_welcome);
 
 
-        ImageIcon ic1 = new ImageIcon("members.png");
+        ImageIcon ic1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/members.png")));
         Image icm1 = ic1.getImage();
         Image resizedIcm1 = icm1.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon icon1 = new ImageIcon(resizedIcm1);
@@ -48,7 +48,7 @@ class GymAdmin extends JFrame implements ActionListener {
         btn_member.addActionListener(this);
 
 
-        ImageIcon ic2 = new ImageIcon("Trainer.png");
+        ImageIcon ic2 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Trainer.png")));
         Image icm2 = ic2.getImage();
         Image resizedIcm2 = icm2.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon icon2 = new ImageIcon(resizedIcm2);
@@ -60,7 +60,7 @@ class GymAdmin extends JFrame implements ActionListener {
          btn_Trainer.addActionListener(this);
 
 
-        ImageIcon ic3 = new ImageIcon("package.png");
+        ImageIcon ic3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("package.png")));
         Image icm3 = ic3.getImage();
         Image resizedIcm3 = icm3.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon icon3 = new ImageIcon(resizedIcm3);
@@ -72,7 +72,7 @@ class GymAdmin extends JFrame implements ActionListener {
          btn_package.addActionListener(this);
 
 
-        ImageIcon ic4 = new ImageIcon("attendance.png");
+        ImageIcon ic4 = new ImageIcon(Objects.requireNonNull(getClass().getResource("attendance.png")));
         Image icm4 = ic4.getImage();
         Image resizedIcm4 = icm4.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon icon4 = new ImageIcon(resizedIcm4);
@@ -83,7 +83,7 @@ class GymAdmin extends JFrame implements ActionListener {
         jp.add(btn_attendance);
           btn_attendance.addActionListener(this);
 
-        ImageIcon ic5 = new ImageIcon("payments.png");
+        ImageIcon ic5 = new ImageIcon(Objects.requireNonNull(getClass().getResource("payments.png")));
         Image icm5 = ic5.getImage();
         Image resizedIcm5 = icm5.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon icon5 = new ImageIcon(resizedIcm5);
@@ -95,7 +95,7 @@ class GymAdmin extends JFrame implements ActionListener {
         btn_payment.addActionListener(this);
 
 
-        ImageIcon ic6 = new ImageIcon("logout.png");
+        ImageIcon ic6 = new ImageIcon(Objects.requireNonNull(getClass().getResource("logout.png")));
         Image icm6 = ic6.getImage();
         Image resizedIcm6 = icm6.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon icon6 = new ImageIcon(resizedIcm6);
